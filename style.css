@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futsal Store</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Custom CSS for Template Futsal - Enhanced */
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #2c2c2c;
+      margin: 0;
+      padding: 0;
+      color: #f8f9fa;
+    }
+
+    .header {
+      background: url('images/header-bg.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .header-content {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .section-title {
+      color: #f8f9fa;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .navbar {
+      background-color: #1a1a1a;
+    }
+
+    .navbar-nav .nav-link {
+      color: #ffffff;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #28a745;
+    }
+	
+	.navbar-brand {
+      background-color: #007bff; /* Warna latar belakang logo diubah menjadi biru */
+      padding: 10px 15px;
+      border-radius: 5px;
+	}
+
+    .navbar-brand img {
+      max-width: 150px;
+      height: auto;
+      width: auto;
+      filter: brightness(0) invert(1); /* Untuk membuat logo menjadi warna biru */
+    }
+
+    /* Banner Section */
+    .banner_section {
+      background-image: url('images/banner-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner_content {
+      max-width: 600px;
+    }
+
+    .banner_text {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      animation: textAnimation 2s ease-in-out infinite;
+    }
+
+    .shop_bt .btn {
+      background-color: #28a745;
+      border-color: #28a745;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .shop_bt .btn:hover {
+      background-color: #218838;
+      transform: translateY(-3px);
+    }
+
+    /* About Section */
+    .about_section {
+      background-image: url('images/about-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 0;
+      color: ##292929; /* Warna tulisan putih */
+    }
+
+    .about_content {
+      max-width: 400px;
+    }
+
+    .about_text {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .shop_bt_2 .btn {
+      background-color: #17a2b8;
+      border-color: #17a2b8;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .shop_bt_2 .btn:hover {
+      background-color: #138496;
+      transform: translateY(-3px);
+    }
+
+    /* Product Section */
+    .featured_section,
+    .product_section {
+      background-color: #343a40;
+      padding: 100px 0;
+    }
+
+    .featured_text,
+    .product_text {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #ffffff; /* Warna tulisan putih */
+    }
+
+    .long_text {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-top {
+      max-height: 200px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-img-top {
+      transform: scale(1.1);
+    }
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .card-text {
+      font-size: 14px;
+      color: #dcdcdc;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+      transform: translateY(-3px);
+    }
+
+    /* Testimonial Section */
+    .testimonial_section {
+      background-color: #ffffff; /* Warna latar belakang putih */
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial_text {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #292929; /* Warna tulisan hitam */
+    }
+
+    .ipsum_text {
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #4a4a4a; /* Warna tulisan abu-abu muda */
+    }
+
+    .client_main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .client_image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .client_image img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .client_image:hover img {
+      transform: scale(1.1);
+    }
+
+    .client_name {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #292929; /* Warna tulisan hitam */
+    }
+
+    .client_designation {
+      font-size: 14px;
+      color: #808080; /* Warna tulisan abu-abu */
+    }
+
+    /* Contact Section */
+    .contact_section {
+      background-color: #292929;
+      padding: 100px 0;
+    }
+
+    .contact_text {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .contact_description {
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #f0f0f0;
+    }
+
+    .contact_info {
+      margin-bottom: 20px;
+      color: #f0f0f0;
+    }
+
+    .contact_info h4 {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .contact_info p {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #f0f0f0;
+    }
+
+    .contact_info a {
+      color: #007bff;
+    }
+
+    .contact_info a:hover {
+      text-decoration: underline;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background-color: #434343;
+      border: none;
+      color: #ffffff;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #b0b0b0;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      background-color: #555555;
+      outline: none;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+      transform: translateY(-3px);
+    }
+
+    @keyframes textAnimation {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h1>Welcome to Futsal Store</h1>
+      <p>Your one-stop shop for all things futsal.</p>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Futsal Store"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <section class="banner_section">
+    <div class="container">
+      <div class="banner_content">
+        <h2 class="banner_text">Kick Off Your Futsal Journey</h2>
+        <div class="shop_bt">
+          <a href="#" class="btn btn-lg btn-success">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about_section">
+    <div class="container">
+      <div class="about_content">
+        <h2 class="about_text">About Us</h2>
+        <p>We offer the best futsal products to enhance your game experience. From shoes to accessories, find everything you need at Futsal Store.</p>
+        <div class="shop_bt_2">
+          <a href="#" class="btn btn-lg btn-info">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="product_section">
+    <div class="container">
+      <h2 class="product_text section-title">Featured Products</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="images/product1.jpg" class="card-img-top" alt="Product 1">
+            <div class="card-body">
+              <h5 class="card-title">Product 1</h5>
+              <p class="card-text">High-quality futsal shoes for maximum performance.</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="images/product2.jpg" class="card-img-top" alt="Product 2">
+            <div class="card-body">
+              <h5 class="card-title">Product 2</h5>
+              <p class="card-text">Comfortable and durable futsal ball.</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="images/product3.jpg" class="card-img-top" alt="Product 3">
+            <div class="card-body">
+              <h5 class="card-title">Product 3</h5>
+              <p class="card-text">Stylish futsal jersey for ultimate comfort.</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="testimonial_section">
+    <div class="container">
+      <h2 class="testimonial_text section-title">What Our Customers Say</h2>
+      <p class="ipsum_text">"The best place to find all my futsal needs. Highly recommended!" - John Doe</p>
+      <div class="client_main">
+        <div class="client_image">
+          <img src="images/client.jpg" alt="Client">
+        </div>
+        <h3 class="client_name">John Doe</h3>
+        <p class="client_designation">Professional Futsal Player</p>
+      </div>
+    </div>
+  </section>
+  <section class="contact_section">
+    <div class="container">
+      <h2 class="contact_text section-title">Contact Us</h2>
+      <p class="contact_description">Have any questions? Reach out to us and we'll get back to you as soon as possible.</p>
+      <div class="contact_info">
+        <h4>Email:</h4>
+        <p><a href="mailto:info@futsalstore.com">info@futsalstore.com</a></p>
+        <h4>Phone:</h4>
+        <p>(123) 456-7890</p>
+      </div>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
